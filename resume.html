@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>田润 - 全栈开发工程师简历</title>
+    <!-- 引入 FontAwesome 图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50; /*以此深蓝为主色调，稳重*/
+            --accent-color: #2563eb;  /* 亮蓝用于链接和强调 */
+            --bg-color: #ffffff;
+            --sidebar-bg: #f8f9fa;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-color: #e5e7eb;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            color: var(--text-main);
+            background-color: #f0f2f5;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        /* A4 纸张容器 */
+        .resume-container {
+            width: 210mm;
+            min-height: 297mm;
+            background: var(--bg-color);
+            margin: 20px auto;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            display: grid;
+            grid-template-columns: 260px 1fr; /* 左侧边栏 + 右侧主内容 */
+        }
+
+        /* 左侧边栏 */
+        .sidebar {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .profile-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background-color: #ddd;
+            margin: 0 auto 10px;
+            border: 4px solid rgba(255,255,255,0.2);
+            background-image: url('https://api.dicebear.com/7.x/avataaars/svg?seed=Felix&backgroundColor=b6e3f4'); /* 示例头像 */
+            background-size: cover;
+        }
+
+        .name-title {
+            text-align: center;
+        }
+
+        .name-title h1 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .name-title p {
+            font-size: 14px;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .contact-info {
+            font-size: 13px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+            color: rgba(255,255,255,0.9);
+        }
+
+        .contact-item i {
+            width: 16px;
+            text-align: center;
+        }
+
+        .section-title-side {
+            font-size: 16px;
+            font-weight: 600;
+            border-bottom: 1px solid rgba(255,255,255,0.3);
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+            margin-top: 10px;
+        }
+
+        .skills-list {
+            list-style: none;
+        }
+
+        .skills-list li {
+            margin-bottom: 12px;
+        }
+
+        .skill-category {
+            font-size: 12px;
+            opacity: 0.7;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .skill-items {
+            font-weight: 500;
+            font-size: 13px;
+            line-height: 1.4;
+        }
+
+        /* 右侧主内容 */
+        .main-content {
+            padding: 40px 35px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title i {
+            color: var(--accent-color);
+        }
+
+        .item {
+            margin-bottom: 20px;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 6px;
+        }
+
+        .item-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #000;
+        }
+
+        .item-subtitle {
+            font-size: 14px;
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        .item-date {
+            font-size: 13px;
+            color: var(--text-secondary);
+            font-family: 'Courier New', monospace;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin: 6px 0 10px 0;
+        }
+
+        .tech-tag {
+            background-color: #eff6ff;
+            color: var(--accent-color);
+            font-size: 11px;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            border: 1px solid #dbeafe;
+        }
+
+        .item-desc {
+            list-style: none;
+        }
+
+        .item-desc li {
+            position: relative;
+            padding-left: 15px;
+            margin-bottom: 6px;
+            font-size: 13.5px;
+            color: #444;
+            text-align: justify;
+        }
+
+        .item-desc li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        .item-desc strong {
+            color: #000;
+            font-weight: 600;
+        }
+
+        /* 链接样式 */
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        .main-content a {
+            color: var(--accent-color);
+        }
+
+        /* 打印适配 */
+        @media print {
+            body {
+                background-color: #fff;
+                -webkit-print-color-adjust: exact;
+            }
+            .resume-container {
+                box-shadow: none;
+                margin: 0;
+                width: 100%;
+                height: auto;
+            }
+            /* 隐藏打印按钮等无关元素 */
+            .no-print {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .resume-container {
+                grid-template-columns: 1fr;
+                width: 100%;
+                margin: 0;
+            }
+            .sidebar {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 打印按钮 -->
+    <div style="position: fixed; top: 20px; right: 20px; z-index: 100;" class="no-print">
+        <button onclick="window.print()" style="padding: 10px 20px; background: #2563eb; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+            <i class="fa-solid fa-print"></i> 下载/打印简历
+        </button>
+    </div>
+
+    <div class="resume-container">
+        <!-- 左侧边栏 -->
+        <aside class="sidebar">
+            <div class="profile-photo">
+                <!-- 占位符头像 -->
+            </div>
+            
+            <div class="name-title">
+                <h1>田润</h1>
+                <p>全栈开发工程师 / AI应用开发者</p>
+            </div>
+
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>191 1301 2275</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <a href="mailto:wanyi_424@foxmail.com">wanyi_424@foxmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-cake-candles"></i>
+                    <span>2005年5月 (19岁)</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-brands fa-github"></i>
+                    <a href="https://github.com/yourusername" target="_blank">github.com/your-id</a>
+                </div>
+            </div>
+
+            <!-- 教育背景已移除 -->
+
+            <div>
+                <div class="section-title-side">技术栈</div>
+                <ul class="skills-list">
+                    <li>
+                        <div class="skill-category">前端 & 桌面端</div>
+                        <div class="skill-items">Vue 3, TypeScript, JavaScript, Element Plus, Uni-app, Rust, Tauri</div>
+                    </li>
+                    <li>
+                        <div class="skill-category">后端服务</div>
+                        <div class="skill-items">Node.js, Python (FastAPI), RESTful API, MySQL, Redis</div>
+                    </li>
+                    <li>
+                        <div class="skill-category">部署 & 运维</div>
+                        <div class="skill-items">Linux (CentOS/Ubuntu), Nginx, Docker, Git, CI/CD</div>
+                    </li>
+                    <li>
+                        <div class="skill-category">AI & LLM</div>
+                        <div class="skill-items">LangChain, Function Calling, RAG, MCP Protocol</div>
+                    </li>
+                </ul>
+            </div>
+            
+            <div>
+                <div class="section-title-side">荣誉 & 奖项</div>
+                <div style="font-size: 12px; line-height: 1.4;">
+                    • 2025 AWS 中国上海峰会 · 1000Aider 应用大赛全国 30 强<br><br>
+                    • 独立全栈开发累计用户超 60,000+
+                </div>
+            </div>
+        </aside>
+
+        <!-- 右侧主内容 -->
+        <main class="main-content">
+            
+            <!-- 个人简介 -->
+            <section class="section">
+                <div class="section-title">
+                    <i class="fa-solid fa-user"></i> 个人简介
+                </div>
+                <p style="font-size: 14px; color: #444; text-align: justify;">
+                    具备全栈开发能力的开发者，主攻 <strong>Vue 3 + Node.js/Python</strong> 技术栈。拥有从0到1独立构建高并发C端应用经验，累计服务用户 <strong>60k+</strong>。擅长复杂系统架构设计与性能优化，熟练掌握 <strong>Linux/Nginx</strong> 部署环境。对 <strong>LLM Agent</strong> 开发、桌面端应用（Rust/Tauri）及协议逆向分析有深入实战经验，具备极强的工程落地能力。
+                </p>
+            </section>
+
+            <!-- 项目经历 -->
+            <section class="section">
+                <div class="section-title">
+                    <i class="fa-solid fa-code"></i> 项目经历
+                </div>
+
+                <!-- 项目 1 -->
+                <div class="item">
+                    <div class="item-header">
+                        <span class="item-title">多端 AI 生图 SaaS 平台</span>
+                        <span class="item-date">2024.09 - 至今</span>
+                    </div>
+                    <div class="item-subtitle">独立全栈开发 | 小程序 & Web</div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Vue3</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">FastAPI</span>
+                        <span class="tech-tag">Redis</span>
+                        <span class="tech-tag">SSE</span>
+                    </div>
+                    <ul class="item-desc">
+                        <li><strong>多端统一身份认证：</strong> 设计并实现 User 与 Credential 分离的数据库架构，通过 OAuth2 思想打通小程序 OpenID 与 Web 端账号体系，实现多端数据互通。</li>
+                        <li><strong>高并发异步架构：</strong> 针对 AI 生图长耗时痛点，采用 <strong>FastAPI + 异步任务队列</strong> 解耦生成逻辑，配合 Redis 缓存状态；前端采用 <strong>SSE (Server-Sent Events)</strong> 实现流式进度推送，显著降低服务器负载。</li>
+                        <li><strong>工厂模式 API 封装：</strong> 构建统一中间适配层，通过工厂模式封装 Midjourney/SD 等多服务商接口。前端仅需传递风格参数，后端自动映射路由，实现服务商无缝热切换。</li>
+                    </ul>
+                </div>
+
+                <!-- 项目 2 -->
+                <div class="item">
+                    <div class="item-header">
+                        <span class="item-title">自动化招聘/邀约 Agent (桌面版)</span>
+                        <span class="item-date">2024.05 - 2024.08</span>
+                    </div>
+                    <div class="item-subtitle">全栈开发 | Rust + Tauri + LLM</div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Rust</span>
+                        <span class="tech-tag">Tauri</span>
+                        <span class="tech-tag">LangChain</span>
+                        <span class="tech-tag">MCP Server</span>
+                    </div>
+                    <ul class="item-desc">
+                        <li><strong>协议逆向与数据采集：</strong> 独立完成目标平台的接口抓包与协议分析，通过伪造 Request Headers 与 Cookie 复用技术，安全绕过反爬策略，实现高价值数据的自动化获取。</li>
+                        <li><strong>Agent 智能体开发：</strong> 开发基于 <strong>Rust + Tauri</strong> 的轻量级桌面应用。利用 <strong>LangChain</strong> 编排工作流，并将数据抓取、简历筛选等能力封装为 <strong>Function Calling</strong> 工具，使 LLM 能够根据上下文自主调用工具完成从筛选到邀约的自动化全流程。</li>
+                    </ul>
+                </div>
+
+                <!-- 项目 3 -->
+                <div class="item">
+                    <div class="item-header">
+                        <span class="item-title">情感社交小程序</span>
+                        <span class="item-date">2023.10 - 2024.04</span>
+                    </div>
+                    <div class="item-subtitle">独立全栈开发 | 用户量 60,000+</div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Uni-app</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">重构</span>
+                    </div>
+                    <ul class="item-desc">
+                        <li><strong>系统架构重构：</strong> 主导系统从 Flask 单体应用重构为分层架构，重新设计用户权限模型，解决了早期架构扩展性差的问题，支撑了后续业务的快速迭代。</li>
+                        <li><strong>MySQL 深度优化：</strong> 面对 60k+ 用户量级，通过建立<strong>联合索引</strong>优化多条件筛选查询（遵循最左前缀原则），利用 <strong>EXPLAIN</strong> 分析并优化慢查询，将核心接口响应时间从 800ms+ 降低至 200ms 以内。</li>
+                        <li><strong>推荐算法逻辑：</strong> 实现了基于标签的冷启动推荐与基于活跃度的加权排序算法，有效提升了社区活跃度与留存率。</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 工作经历 -->
+            <section class="section">
+                <div class="section-title">
+                    <i class="fa-solid fa-briefcase"></i> 工作经历
+                </div>
+                
+                <!-- 新增：接单/独立开发经历 -->
+                <div class="item">
+                    <div class="item-header">
+                        <span class="item-title">独立全栈开发者 / 自由接单</span>
+                        <span class="item-date">2023.06 - 至今</span>
+                    </div>
+                    <div class="item-subtitle">全栈开发 | 微信小程序 & Web 应用</div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Element Plus</span>
+                        <span class="tech-tag">Vue Admin</span>
+                        <span class="tech-tag">Linux</span>
+                        <span class="tech-tag">Nginx</span>
+                    </div>
+                    <ul class="item-desc">
+                        <li><strong>商业项目交付：</strong> 独立承接并交付多个商业项目，包括企业级管理后台（基于 <strong>Vue 3 + Element Plus</strong>）、垂直领域微信小程序及响应式 Web 官网。</li>
+                        <li><strong>服务器运维：</strong> 负责项目的全流程部署与维护，熟练配置 <strong>Linux</strong> 服务器环境，使用 <strong>Nginx</strong> 进行反向代理、负载均衡及 HTTPS 配置，确保服务的高可用性与安全性。</li>
+                    </ul>
+                </div>
+
+                <div class="item">
+                    <div class="item-header">
+                        <span class="item-title">北京针库文化</span>
+                        <span class="item-date">2024.09 - 2025.02</span>
+                    </div>
+                    <div class="item-subtitle">技术型运营 / AI 应用落地</div>
+                    <ul class="item-desc">
+                        <li>负责 AIGC 工具（文生图/视频）的商业化场景技术验证，探索 AI 工作流在内容生产中的自动化落地。</li>
+                        <li>作为技术接口人参与 AWS 峰会等行业技术交流，调研前沿架构（RAG/Agent）并转化为内部生产力工具方案。</li>
+                    </ul>
+                </div>
+            </section>
+
+        </main>
+    </div>
+</body>
+</html>

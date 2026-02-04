@@ -1,0 +1,281 @@
+:root {
+  --primary-color: #2c3e50; /*以此深蓝为主色调，稳重*/
+  --accent-color: #2563eb;  /* 亮蓝用于链接和强调 */
+  --bg-color: #ffffff;
+  --sidebar-bg: #f8f9fa;
+  --text-main: #333333;
+  --text-secondary: #666666;
+  --border-color: #e5e7eb;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  color: var(--text-main);
+  background-color: #f0f2f5;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+/* A4 纸张容器 */
+.resume-container {
+  width: 210mm;
+  min-height: 297mm;
+  background: var(--bg-color);
+  margin: 20px auto;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  display: grid;
+  grid-template-columns: 260px 1fr; /* 左侧边栏 + 右侧主内容 */
+}
+
+/* 左侧边栏 */
+.sidebar {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  user-select: text; /* 允许复制 */
+}
+
+.contact-item.clickable:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
+  margin-left: -4px;
+  margin-right: -4px;
+  transition: background-color 0.2s;
+}
+
+.profile-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: #ddd;
+  margin: 0 auto 10px;
+  border: 4px solid rgba(255,255,255,0.2);
+  background-image: url('https://api.dicebear.com/7.x/avataaars/svg?seed=Felix&backgroundColor=b6e3f4'); /* 示例头像 */
+  background-size: cover;
+}
+
+.name-title {
+  text-align: center;
+}
+
+.name-title h1 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.name-title p {
+  font-size: 14px;
+  opacity: 0.9;
+  font-weight: 300;
+}
+
+.contact-info {
+  font-size: 13px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  color: rgba(255,255,255,0.9);
+}
+
+.contact-item i {
+  width: 16px;
+  text-align: center;
+}
+
+.section-title-side {
+  font-size: 16px;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  padding-bottom: 8px;
+  margin-bottom: 15px;
+  margin-top: 10px;
+}
+
+.skills-list {
+  list-style: none;
+}
+
+.skills-list li {
+  margin-bottom: 12px;
+}
+
+.skill-category {
+  font-size: 12px;
+  opacity: 0.7;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.skill-items {
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+/* 右侧主内容 */
+.main-content {
+  padding: 40px 35px;
+  user-select: none; /* 禁止复制 */
+}
+
+.section {
+  margin-bottom: 30px;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section-title i {
+  color: var(--accent-color);
+}
+
+.item {
+  margin-bottom: 20px;
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 6px;
+}
+
+.item-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #000;
+}
+
+.item-subtitle {
+  font-size: 14px;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.item-date {
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-family: 'Courier New', monospace;
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 6px 0 10px 0;
+}
+
+.tech-tag {
+  background-color: #eff6ff;
+  color: var(--accent-color);
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+  border: 1px solid #dbeafe;
+}
+
+.item-desc {
+  list-style: none;
+}
+
+.item-desc li {
+  position: relative;
+  padding-left: 15px;
+  margin-bottom: 6px;
+  font-size: 13.5px;
+  color: #444;
+  text-align: justify;
+}
+
+.item-desc li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--accent-color);
+  font-weight: bold;
+}
+
+.item-desc strong {
+  color: #000;
+  font-weight: 600;
+}
+
+/* 链接样式 */
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.main-content a {
+  color: var(--accent-color);
+}
+
+
+@media screen and (max-width: 768px) {
+  .resume-container {
+    grid-template-columns: 1fr;
+    width: 100%;
+    margin: 0;
+  }
+  .sidebar {
+    padding: 20px;
+  }
+}
+
+/* 打印适配 - 放在最后以确保优先级 */
+@media print {
+  @page {
+    margin: 0;
+    size: auto;
+  }
+  body {
+    background-color: #fff;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    margin: 0;
+  }
+  .resume-container {
+    display: grid !important;
+    grid-template-columns: 260px 1fr !important;
+    width: 100% !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    height: auto !important;
+    max-width: none !important;
+  }
+  .sidebar {
+    height: auto !important; /* 确保侧边栏在打印时能延伸 */
+    min-height: 100vh; /* 尝试填满高度 */
+  }
+  /* 隐藏打印按钮等无关元素 */
+  .no-print {
+    display: none !important;
+  }
+}
