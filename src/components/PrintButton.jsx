@@ -7,8 +7,8 @@ const PrintButton = () => {
 
   return (
     <div className="no-print" style={{ position: 'fixed', top: '20px', right: '20px', zIndex: 100 }}>
-      <button 
-        onClick={handlePrint} 
+      <button
+        onClick={handlePrint}
         style={{
           padding: '10px 20px',
           background: '#2563eb',

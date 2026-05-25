@@ -44,14 +44,81 @@ body {
   user-select: text; /* 允许复制 */
 }
 
-.contact-item.clickable:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 4px;
-  padding-left: 4px;
-  padding-right: 4px;
-  margin-left: -4px;
-  margin-right: -4px;
-  transition: background-color 0.2s;
+/* 可复制项样式 */
+.contact-item.copyable {
+  cursor: pointer;
+  padding: 6px 8px;
+  margin-left: -8px;
+  margin-right: -8px;
+  border-radius: 6px;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
+  transition: all 0.2s ease;
+}
+
+.contact-item.copyable:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: translateX(4px);
+}
+
+.contact-item.copyable:active {
+  transform: translateX(4px) scale(0.98);
+}
+
+/* 复制图标提示 */
+.copy-hint {
+  margin-left: auto;
+  opacity: 0.4;
+  font-size: 13px !important;
+  width: auto !important;
+  transition: opacity 0.2s ease;
+}
+
+.contact-item.copyable:hover .copy-hint {
+  opacity: 1;
+}
+
+/* 可点击链接项样式 */
+.contact-item.linkable {
+  padding: 6px 8px;
+  margin-left: -8px;
+  margin-right: -8px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.contact-item.linkable:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: translateX(4px);
+}
+
+.contact-item.linkable a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffffff;
+  text-decoration: underline;
+  text-decoration-style: dashed;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(255, 255, 255, 0.5);
+  transition: all 0.2s ease;
+}
+
+.contact-item.linkable:hover a {
+  text-decoration-color: #ffffff;
+  text-decoration-style: solid;
+}
+
+/* 外链图标提示 */
+.link-hint {
+  opacity: 0.6;
+  font-size: 12px !important;
+  width: auto !important;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.contact-item.linkable:hover .link-hint {
+  opacity: 1;
+  transform: translate(2px, -2px);
 }
 
 .profile-photo {
@@ -82,20 +149,21 @@ body {
 }
 
 .contact-info {
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .contact-item {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 12px;
+  gap: 12px;
+  margin-bottom: 14px;
   color: rgba(255,255,255,0.9);
 }
 
 .contact-item i {
-  width: 16px;
+  width: 18px;
   text-align: center;
+  font-size: 15px;
 }
 
 .section-title-side {
@@ -277,5 +345,21 @@ a {
   /* 隐藏打印按钮等无关元素 */
   .no-print {
     display: none !important;
+  }
+  /* 隐藏交互提示图标 */
+  .copy-hint,
+  .link-hint {
+    display: none !important;
+  }
+  .contact-item.copyable,
+  .contact-item.linkable {
+    border-bottom: none !important;
+  }
+  /* 确保链接在 PDF 中可点击 */
+  .contact-item.linkable a {
+    pointer-events: auto !important;
+    text-decoration: underline !important;
+    text-decoration-style: solid !important;
+    text-decoration-color: rgba(255, 255, 255, 0.7) !important;
   }
 }

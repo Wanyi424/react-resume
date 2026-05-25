@@ -36,30 +36,33 @@ const Sidebar = () => {
 
       <div className="contact-info">
         <div
-          className="contact-item clickable"
+          className="contact-item copyable"
           onClick={() => handleCopy('191 1301 2275', '电话')}
           title="点击复制电话"
-          style={{ cursor: 'pointer' }}
         >
           <i className="fa-solid fa-phone"></i>
           <span>191 1301 2275</span>
+          <i className="fa-regular fa-copy copy-hint"></i>
         </div>
         <div
-          className="contact-item clickable"
+          className="contact-item copyable"
           onClick={() => handleCopy('wanyi_424@foxmail.com', '邮箱')}
           title="点击复制邮箱"
-          style={{ cursor: 'pointer' }}
         >
           <i className="fa-solid fa-envelope"></i>
-          <a href="mailto:wanyi_424@foxmail.com" onClick={(e) => e.preventDefault()} style={{ pointerEvents: 'none' }}>wanyi_424@foxmail.com</a>
+          <span>wanyi_424@foxmail.com</span>
+          <i className="fa-regular fa-copy copy-hint"></i>
         </div>
         <div className="contact-item">
           <i className="fa-solid fa-cake-candles"></i>
           <span>2004年5月</span>
         </div>
-        <div className="contact-item">
+        <div className="contact-item linkable">
           <i className="fa-brands fa-github"></i>
-          <a href="https://github.com/Ryan7t" target="_blank" rel="noreferrer">github.com/Ryan7t</a>
+          <a href="https://github.com/Ryan7t" target="_blank" rel="noreferrer">
+            github.com/Ryan7t
+            <i className="fa-solid fa-arrow-up-right-from-square link-hint"></i>
+          </a>
         </div>
       </div>
 
@@ -74,15 +77,15 @@ const Sidebar = () => {
           </li>
           <li>
             <div className="skill-category">后端服务</div>
-            <div className="skill-items">Node.js, Python (FastAPI), RESTful API, MySQL, Redis</div>
+            <div className="skill-items">Node.js, Python (FastAPI、Django), RESTful API, MySQL, Redis</div>
           </li>
           <li>
             <div className="skill-category">部署 & 运维</div>
-            <div className="skill-items">Linux (CentOS/Ubuntu), Nginx, Docker, Git, CI/CD</div>
+            <div className="skill-items">Linux (CentOS/Ubuntu), Nginx, Docker Compose, Git, CI/CD</div>
           </li>
           <li>
             <div className="skill-category">AI & LLM</div>
-            <div className="skill-items">LangChain, Function Calling, RAG, MCP Protocol</div>
+            <div className="skill-items">LangChain, Function Calling, RAG, MCP Protocol, <strong>Claude Code、Codex</strong></div>
           </li>
         </ul>
       </div>
@@ -91,7 +94,8 @@ const Sidebar = () => {
         <div className="section-title-side">荣誉 & 奖项</div>
         <div style={{ fontSize: '12px', lineHeight: '1.4' }}>
           • 2025 AWS 中国上海峰会 · 1000Aider 应用大赛全国 30 强<br /><br />
-          • 独立全栈开发累计用户超 100,000+
+          • 独立全栈开发累计用户超 100,000+<br /><br />
+          • 快手 KwaiK AT 开发挑战赛 · 最佳项目奖 & 三等奖
         </div>
       </div>
     </aside>

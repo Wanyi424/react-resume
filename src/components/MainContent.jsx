@@ -9,7 +9,7 @@ const MainContent = () => {
           <i className="fa-solid fa-user"></i> 个人简介
         </div>
         <p style={{ fontSize: '14px', color: '#444', textAlign: 'justify' }}>
-          具备全栈开发能力的开发者，主攻 <strong>React / Vue 3 + Node.js/Python</strong> 技术栈。精通<strong>Claude Code、codex、Opencode</strong>等AI编码工具，拥有从0到1独立构建高并发C端应用经验，独立开发的C端产品累计用户突破 <strong>10万+</strong>。擅长复杂系统架构设计与性能优化，熟练掌握 <strong>Linux/Nginx</strong> 部署环境。对 <strong>LLM Agent</strong> 开发、桌面端应用（Rust/Tauri）及协议逆向分析有深入实战经验，具备极强的工程落地能力。
+          具备全栈开发能力的开发者，主攻 <strong>React / Vue 3 + Node.js/Python</strong> 技术栈。精通<strong>Claude Code、codex</strong>等AI编码工具，拥有从0到1独立构建高并发C端应用经验，独立开发的C端产品累计用户突破 <strong>10万+</strong>。擅长复杂系统架构设计与性能优化，熟练掌握 <strong>Linux/Nginx</strong> 部署环境。对 <strong>LLM Agent</strong> 开发、桌面端应用（Rust/Tauri）及协议逆向分析有深入实战经验，具备极强的工程落地能力。
         </p>
       </section>
 
@@ -23,7 +23,7 @@ const MainContent = () => {
         <div className="item">
           <div className="item-header">
             <span className="item-title">多端 AI 生图 SaaS 平台</span>
-            <span className="item-date">2024.09 - 至今</span>
+            <span className="item-date">2025.09 - 2025.12</span>
           </div>
           <div className="item-subtitle">独立全栈开发 | 小程序 & React Web</div>
           <div className="tech-stack">
@@ -44,7 +44,7 @@ const MainContent = () => {
         <div className="item">
           <div className="item-header">
             <span className="item-title">自动化招聘/邀约Agent</span>
-            <span className="item-date">2024.05 - 2024.08</span>
+            <span className="item-date">2025.05 - 2025.08</span>
           </div>
           <div className="item-subtitle">全栈开发 | Rust + Tauri + LLM</div>
           <div className="tech-stack">
@@ -63,7 +63,7 @@ const MainContent = () => {
         <div className="item">
           <div className="item-header">
             <span className="item-title">情感社交类小程序（UGC社区）</span>
-            <span className="item-date">2023.10 - 2024.04</span>
+            <span className="item-date">2024.10 - 2025.04</span>
           </div>
           <div className="item-subtitle">独立全栈开发 | 用户量 100,000+</div>
           <div className="tech-stack">
@@ -89,7 +89,7 @@ const MainContent = () => {
         <div className="item">
           <div className="item-header">
             <span className="item-title">独立全栈开发者 / 自由接单</span>
-            <span className="item-date">2023.06 - 至今</span>
+            <span className="item-date">2024.06 - 2025.12</span>
           </div>
           <div className="item-subtitle">全栈开发 | 微信小程序 & Web 应用</div>
           <div className="tech-stack">
@@ -107,7 +107,7 @@ const MainContent = () => {
         <div className="item">
           <div className="item-header">
             <span className="item-title">北京针库文化</span>
-            <span className="item-date">2024.09 - 2025.02</span>
+            <span className="item-date">2025.09 - 2026.02</span>
           </div>
           <div className="item-subtitle">技术型运营 / AI 应用落地</div>
           <ul className="item-desc">
