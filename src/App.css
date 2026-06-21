@@ -203,6 +203,11 @@ body {
   user-select: none; /* 禁止复制 */
 }
 
+/* 开发环境下允许复制 */
+.main-content.allow-select {
+  user-select: text !important;
+}
+
 .section {
   margin-bottom: 30px;
 }
@@ -244,6 +249,13 @@ body {
   font-size: 14px;
   color: var(--text-main);
   font-weight: 600;
+}
+
+.item-subtitle-inline {
+  font-size: 14px;
+  color: var(--text-secondary);
+  font-weight: 500;
+  margin-left: 8px;
 }
 
 .item-date {
@@ -305,6 +317,325 @@ a {
   color: var(--accent-color);
 }
 
+/* 个人简介默认文字颜色 */
+.profile-summary {
+  color: #444;
+}
+
+/* 浮动控制面板 */
+.floating-controls {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 100;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.control-btn {
+  height: 42px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid #e2e8f0;
+  outline: none;
+}
+
+.theme-toggle-btn {
+  width: 42px;
+  background-color: #ffffff;
+  color: #475569;
+  font-size: 18px;
+}
+
+.theme-toggle-btn:hover {
+  background-color: #f8fafc;
+  color: #0f172a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px -1px rgba(0, 0, 0, 0.1), 0 4px 6px -1px rgba(0, 0, 0, 0.06);
+}
+
+.print-btn {
+  padding: 0 20px;
+  background-color: #2563eb;
+  color: #ffffff;
+  border: none;
+  font-size: 14px;
+  gap: 8px;
+}
+
+.print-btn:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px -1px rgba(0, 0, 0, 0.15), 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.print-btn:active, .theme-toggle-btn:active {
+  transform: translateY(0);
+}
+
+/* 暗色模式样式 */
+body.dark-mode {
+  background-color: #0b0f19;
+  color: #f1f5f9;
+}
+
+body.dark-mode .resume-container {
+  background: #1e293b;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .sidebar {
+  background-color: #0f172a;
+  border-right: 1px solid #1e293b;
+}
+
+body.dark-mode .theme-toggle-btn {
+  background-color: #1e293b;
+  color: #fbbf24;
+  border-color: #334155;
+}
+
+body.dark-mode .theme-toggle-btn:hover {
+  background-color: #334155;
+  color: #f59e0b;
+}
+
+body.dark-mode .section-title {
+  color: #60a5fa;
+  border-bottom-color: #334155;
+}
+
+body.dark-mode .item-title {
+  color: #ffffff;
+}
+
+body.dark-mode .item-subtitle {
+  color: #e2e8f0;
+}
+
+body.dark-mode .item-subtitle-inline {
+  color: #94a3b8;
+}
+
+body.dark-mode .item-date {
+  color: #94a3b8;
+}
+
+body.dark-mode .tech-tag {
+  background-color: rgba(37, 99, 235, 0.15);
+  color: #60a5fa;
+  border-color: rgba(96, 165, 250, 0.3);
+}
+
+body.dark-mode .item-desc li {
+  color: #cbd5e1;
+}
+
+body.dark-mode .item-desc li::before {
+  color: #60a5fa;
+}
+
+body.dark-mode .item-desc strong {
+  color: #ffffff;
+}
+
+body.dark-mode .profile-summary {
+  color: #cbd5e1;
+}
+
+
+/* GitHub Preview Section */
+.github-preview-section {
+  margin-top: 35px;
+}
+
+.github-screenshot-container {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--border-color);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+}
+
+.github-screenshot-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  text-decoration: none;
+}
+
+.github-screenshot-img {
+  width: 100%;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.github-screenshot-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: #ffffff;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.github-screenshot-overlay i {
+  font-size: 24px;
+}
+
+/* Hover effects */
+.github-screenshot-container:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.github-screenshot-container:hover .github-screenshot-img {
+  transform: scale(1.02);
+}
+
+.github-screenshot-container:hover .github-screenshot-overlay {
+  opacity: 1;
+}
+
+/* Dark mode tweaks */
+body.dark-mode .github-screenshot-container {
+  border-color: #334155;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .github-screenshot-container:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.45);
+}
+
+body.dark-mode .github-screenshot-overlay {
+  background: rgba(0, 0, 0, 0.55);
+}
+
+/* GitHub Modal Styles */
+.github-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(15, 23, 42, 0.9);
+  backdrop-filter: blur(10px);
+  z-index: 10000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+
+.github-modal-controls {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 12px;
+  z-index: 10001;
+}
+
+.github-modal-btn {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.github-modal-btn:hover {
+  background-color: #ffffff;
+  color: #0f172a;
+  border-color: #ffffff;
+}
+
+.github-link-btn {
+  background-color: var(--accent-color) !important;
+  border-color: var(--accent-color) !important;
+  color: #ffffff !important;
+  padding: 10px 22px;
+  font-size: 14px;
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.5);
+  transform: scale(1.02);
+}
+
+.github-link-btn:hover {
+  background-color: #1d4ed8 !important;
+  color: #ffffff !important;
+  box-shadow: 0 6px 20px rgba(29, 78, 216, 0.7);
+  transform: scale(1.06);
+}
+
+.github-modal-tips {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(15, 23, 42, 0.6);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  pointer-events: none;
+}
+
+.github-modal-img-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  cursor: grab;
+}
+
+.github-modal-img-container:active {
+  cursor: grabbing;
+}
+
+.github-modal-img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  transition: transform 0.1s ease-out;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
 
 @media screen and (max-width: 768px) {
   .resume-container {
@@ -323,13 +654,14 @@ a {
     margin: 0;
     size: auto;
   }
-  body {
-    background-color: #fff;
+  body, body.dark-mode {
+    background-color: #fff !important;
+    color: #333333 !important;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
     margin: 0;
   }
-  .resume-container {
+  .resume-container, body.dark-mode .resume-container {
     display: grid !important;
     grid-template-columns: 260px 1fr !important;
     width: 100% !important;
@@ -337,10 +669,12 @@ a {
     box-shadow: none !important;
     height: auto !important;
     max-width: none !important;
+    background: #ffffff !important;
   }
-  .sidebar {
+  .sidebar, body.dark-mode .sidebar {
     height: auto !important; /* 确保侧边栏在打印时能延伸 */
     min-height: 100vh; /* 尝试填满高度 */
+    background-color: var(--primary-color) !important;
   }
   /* 隐藏打印按钮等无关元素 */
   .no-print {
@@ -362,4 +696,44 @@ a {
     text-decoration-style: solid !important;
     text-decoration-color: rgba(255, 255, 255, 0.7) !important;
   }
-}
+  
+  /* 强制打印时所有暗色下的文字和块返回正常状态 */
+  body.dark-mode .section-title {
+    color: var(--primary-color) !important;
+    border-bottom-color: var(--border-color) !important;
+  }
+  body.dark-mode .item-title {
+    color: #000000 !important;
+  }
+  body.dark-mode .item-subtitle {
+    color: var(--text-main) !important;
+  }
+  body.dark-mode .item-subtitle-inline {
+    color: var(--text-secondary) !important;
+  }
+  .item-subtitle-inline {
+    color: var(--text-secondary) !important;
+  }
+  body.dark-mode .item-date {
+    color: var(--text-secondary) !important;
+  }
+  body.dark-mode .tech-tag {
+    background-color: #eff6ff !important;
+    color: var(--accent-color) !important;
+    border-color: #dbeafe !important;
+  }
+  body.dark-mode .item-desc li {
+    color: #444444 !important;
+  }
+  body.dark-mode .item-desc li::before {
+    color: var(--accent-color) !important;
+  }
+  body.dark-mode .item-desc strong {
+    color: #000000 !important;
+  }
+  body.dark-mode .profile-summary {
+    color: #444444 !important;
+  }
+  body.dark-mode .main-content a {
+    color: var(--accent-color) !important;
+  }}

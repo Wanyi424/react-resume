@@ -59,8 +59,8 @@ const Sidebar = () => {
         </div>
         <div className="contact-item linkable">
           <i className="fa-brands fa-github"></i>
-          <a href="https://github.com/Ryan7t" target="_blank" rel="noreferrer">
-            github.com/Ryan7t
+          <a href="https://github.com/Wanyi424" target="_blank" rel="noreferrer">
+            github.com/Wanyi424
             <i className="fa-solid fa-arrow-up-right-from-square link-hint"></i>
           </a>
         </div>
@@ -72,20 +72,20 @@ const Sidebar = () => {
         <div className="section-title-side">技术栈</div>
         <ul className="skills-list">
           <li>
-            <div className="skill-category">前端 & 桌面端</div>
-            <div className="skill-items">React, Vue 3, TypeScript, JavaScript, Element Plus, Uni-app, Rust, Tauri</div>
+            <div className="skill-category">前端 / 多端</div>
+            <div className="skill-items">React, Next.js, Vue3, TypeScript, Uni-app, HarmonyOS ArkTS</div>
           </li>
           <li>
-            <div className="skill-category">后端服务</div>
-            <div className="skill-items">Node.js, Python (FastAPI、Django), RESTful API, MySQL, Redis</div>
+            <div className="skill-category">后端 / 数据</div>
+            <div className="skill-items">Python, Node.js, FastAPI, MySQL, PostgreSQL, Redis</div>
           </li>
           <li>
-            <div className="skill-category">部署 & 运维</div>
-            <div className="skill-items">Linux (CentOS/Ubuntu), Nginx, Docker Compose, Git, CI/CD</div>
+            <div className="skill-category">AI / Agent</div>
+            <div className="skill-items"><strong>Claude Code</strong>, <strong>Codex</strong>, Function Calling, <strong>SKILL</strong>, MCP, RAG, Harness, Loop, LangChain</div>
           </li>
           <li>
-            <div className="skill-category">AI & LLM</div>
-            <div className="skill-items">LangChain, Function Calling, RAG, MCP Protocol, <strong>Claude Code、Codex</strong></div>
+            <div className="skill-category">工程 / 部署</div>
+            <div className="skill-items">Linux, Nginx, Docker Compose, Git</div>
           </li>
         </ul>
       </div>
