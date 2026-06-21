@@ -87,7 +87,7 @@
 }
 
 .pm-name {
-  font-size: 36px;
+  font-size: 42px;
   font-weight: 800;
   color: #ffffff;
   letter-spacing: 1.5px;
@@ -203,26 +203,30 @@
 .pm-main {
   grid-area: main;
   background-color: #ffffff;
-  padding: 30px 35px 20px 40px;
+  padding: 24px 35px 24px 40px; /* Balanced top & bottom padding */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Dynamically balance main section height */
   box-sizing: border-box;
   transition: background-color 0.3s ease;
 }
 
-/* Timeline System in Main Content */
+/* Timeline System in Main Content - Unified wrapping timeline container */
 .pm-main-timeline {
   position: relative;
-  padding-left: 24px;
+  width: 100%;
   box-sizing: border-box;
 }
 
 .pm-main-line {
   position: absolute;
   left: 10px;
-  top: 24px;
-  bottom: 10px;
+  top: 10px; /* Center-aligned with the first section title text */
+  bottom: 8px; /* Extends to the bottom of the last item */
   width: 2px;
-  background-color: var(--border-light); /* Clean solid light gray timeline line */
-  opacity: 1;
+  background-color: var(--border-light);
+  opacity: 0.8;
+  z-index: 1; /* Sits behind text and dots */
 }
 
 /* Section block */
@@ -231,59 +235,89 @@
   margin-bottom: 22px;
 }
 
-.pm-section-header {
-  position: relative;
-  margin-bottom: 16px;
-  display: flex;
-  align-items: center;
+.pm-timeline-section:last-of-type {
+  margin-bottom: 0;
 }
 
-.pm-section-header .pm-timeline-dot {
-  position: absolute;
-  left: -17px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background-color: var(--accent-color); /* Solid Indigo Dot */
-  border: none;
-  box-shadow: none;
+/* Section Header: Grid-aligned, Flex row with horizontal divider line */
+.pm-section-header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 16px;
+  margin-bottom: 14px;
+  position: relative;
   z-index: 2;
 }
 
 .pm-section-title {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 800;
   color: var(--text-primary);
   letter-spacing: 0.5px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  white-space: nowrap; /* Prevent title wrapping */
+  background-color: #ffffff; /* Masks the vertical timeline behind it */
+  padding-right: 12px; /* Visual spacing before the line starts */
+  position: relative;
+  z-index: 3;
+  transition: background-color 0.3s ease;
+}
+
+.pm-section-line {
+  flex-grow: 1;
+  height: 1px;
+  background: linear-gradient(to right, var(--accent-color) 0%, var(--border-light) 100%);
+  opacity: 0.8;
+  position: relative;
+  z-index: 2;
+}
+
+/* Content block under the title: Indented to align timeline elements nicely */
+.pm-section-content {
+  position: relative;
+  padding-left: 24px;
+  box-sizing: border-box;
 }
 
 /* Experience / Project items */
-.pm-work-item {
+.pm-timeline-item {
+  position: relative;
   margin-bottom: 16px;
+}
+
+.pm-timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Reusable timeline dots */
+.pm-timeline-dot {
+  position: absolute;
+  left: -17px; /* Center dot on the 11px line (24px indent - 17px = 7px. Width 8px means center is at 11px) */
+  top: 6px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  z-index: 3; /* Sit on top of the vertical line */
+  box-sizing: border-box;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pm-timeline-dot.solid {
+  background-color: var(--accent-color);
+  border: none;
+}
+
+.pm-timeline-dot.hollow {
+  background-color: #ffffff;
+  border: 2px solid var(--accent-color);
+}
+
+.pm-work-item {
   position: relative;
 }
 
 .pm-project-item {
   position: relative;
-  margin-bottom: 16px;
-}
-
-.pm-project-item .pm-timeline-dot {
-  position: absolute;
-  left: -16px;
-  top: 8px;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: #ffffff;
-  border: 2px solid var(--accent-color); /* Hollow Indigo Ring for Projects */
-  box-shadow: none;
-  z-index: 2;
 }
 
 /* Item Header */
@@ -455,10 +489,10 @@
   grid-area: sidebar;
   background: var(--sidebar-bg-gradient);
   color: #ffffff;
-  padding: 30px 25px 25px 25px;
+  padding: 12px 25px 25px 25px; /* Added back slight top padding */
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px; /* Decreased gap between sections slightly */
   box-sizing: border-box;
   border-left: 1px solid rgba(255, 255, 255, 0.03);
 }
@@ -499,7 +533,7 @@
 }
 
 .pm-sidebar-section:first-of-type .pm-sidebar-title {
-  margin-top: 5px;
+  margin-top: 0; /* Removed top margin */
 }
 
 /* Skills list details */
@@ -594,6 +628,7 @@ body.dark-mode .pm-main {
 
 body.dark-mode .pm-section-title {
   color: #ffffff;
+  background-color: #0f172a;
 }
 
 body.dark-mode .pm-item-company {
@@ -622,6 +657,14 @@ body.dark-mode .pm-item-desc strong {
 
 body.dark-mode .pm-main-line {
   background-color: #334155;
+}
+
+body.dark-mode .pm-section-line {
+  background: linear-gradient(to right, var(--accent-color) 0%, #334155 100%);
+}
+
+body.dark-mode .pm-timeline-dot.hollow {
+  background-color: #0f172a;
 }
 
 body.dark-mode .pm-tag {
@@ -661,7 +704,7 @@ body.dark-mode .pm-contact-item.copyable:hover {
 
 .pm-footer-right {
   grid-area: footer-right;
-  background-color: #cbd5e1; /* Light gray-blue */
+  background-color: #ffffff; /* Same as pm-main background */
   -webkit-print-color-adjust: exact !important;
   print-color-adjust: exact !important;
 }
@@ -671,7 +714,7 @@ body.dark-mode .pm-footer-left {
 }
 
 body.dark-mode .pm-footer-right {
-  background-color: #334155;
+  background-color: #0f172a; /* Same as dark mode pm-main background */
 }
 
 /* Print Overrides */

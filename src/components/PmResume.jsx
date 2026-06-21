@@ -79,74 +79,80 @@ const PmResume = ({ isDarkMode, onToggleTheme }) => {
             {/* 工作经历 Section */}
             <section className="pm-timeline-section">
               <div className="pm-section-header">
-                <div className="pm-timeline-dot"></div>
                 <h2 className="pm-section-title">工作经历</h2>
+                <div className="pm-section-line"></div>
               </div>
 
-              {/* 工作经历 1 */}
-              <div className="pm-work-item">
-                <div className="pm-item-header">
-                  <span className="pm-item-company">北京针库文化</span>
-                  <span className="pm-item-title">AI 产品内容运营</span>
-                  <span className="pm-item-date">2024.09 - 2025.02</span>
+              <div className="pm-section-content">
+                {/* 工作经历 1 */}
+                <div className="pm-work-item pm-timeline-item">
+                  <div className="pm-timeline-dot solid"></div>
+                  <div className="pm-item-header">
+                    <span className="pm-item-company">北京针库文化</span>
+                    <span className="pm-item-title">AI 产品内容运营</span>
+                    <span className="pm-item-date">2024.09 - 2025.02</span>
+                  </div>
+                  <ul className="pm-item-desc">
+                    <li>长期关注<strong>海外 AI 产品、Agent 应用、AIGC 工具</strong>与前沿资讯，通过实际体验产品，分析其功能亮点、目标用户、使用门槛、典型场景与差异化卖点。</li>
+                    <li>参与国内 AI 产品商单内容制作，提炼产品亮点与Agent / AIGC典型应用场景，输出图文或视频的内容选题和表达方案。</li>
+                  </ul>
                 </div>
-                <ul className="pm-item-desc">
-                  <li>长期关注<strong>海外 AI 产品、Agent 应用、AIGC 工具</strong>与前沿资讯，通过实际体验产品，分析其功能亮点、目标用户、使用门槛、典型场景与差异化卖点。</li>
-                  <li>参与国内 AI 产品商单内容制作，提炼产品亮点与Agent / AIGC典型应用场景，输出图文或视频的内容选题和表达方案。</li>
-                </ul>
-              </div>
 
-              {/* 工作经历 2 */}
-              <div className="pm-work-item">
-                <div className="pm-item-header">
-                  <span className="pm-item-company">独立开发实践</span>
-                  <span className="pm-item-title">AI 应用落地</span>
-                  <span className="pm-item-date">2024.06 - 至今</span>
+                {/* 工作经历 2 */}
+                <div className="pm-work-item pm-timeline-item">
+                  <div className="pm-timeline-dot solid"></div>
+                  <div className="pm-item-header">
+                    <span className="pm-item-company">独立开发实践</span>
+                    <span className="pm-item-title">AI 应用落地</span>
+                    <span className="pm-item-date">2024.06 - 至今</span>
+                  </div>
+                  <ul className="pm-item-desc">
+                    <li>独立完成多个 Web、小程序、后台系统与 AI 功能从需求拆解、原型验证、接口设计到开发上线的完整闭环。</li>
+                    <li>具备与开发团队围绕 API、数据库、任务状态、模型调用、异常处理等问题进行高效沟通的能力，可降低 AI 产品从需求到实现的沟通成本。</li>
+                  </ul>
                 </div>
-                <ul className="pm-item-desc">
-                  <li>独立完成多个 Web、小程序、后台系统与 AI 功能从需求拆解、原型验证、接口设计到开发上线的完整闭环。</li>
-                  <li>具备与开发团队围绕 API、数据库、任务状态、模型调用、异常处理等问题进行高效沟通的能力，可降低 AI 产品从需求到实现的沟通成本。</li>
-                </ul>
               </div>
             </section>
 
             {/* 项目经历 Section */}
             <section className="pm-timeline-section" style={{ marginBottom: 0 }}>
               <div className="pm-section-header">
-                <div className="pm-timeline-dot"></div>
                 <h2 className="pm-section-title">项目经历</h2>
+                <div className="pm-section-line"></div>
               </div>
 
-              {/* 项目 1 */}
-              <div className="pm-project-item">
-                <div className="pm-timeline-dot"></div>
-                <div className="pm-item-header">
-                  <div className="pm-item-title-wrapper">
-                    <span className="pm-item-title">年轻用户内容社区小程序</span>
-                    <span className="pm-tag highlight">用户量 100,000+</span>
+              <div className="pm-section-content">
+                {/* 项目 1 */}
+                <div className="pm-project-item pm-timeline-item">
+                  <div className="pm-timeline-dot hollow"></div>
+                  <div className="pm-item-header">
+                    <div className="pm-item-title-wrapper">
+                      <span className="pm-item-title">年轻用户内容社区小程序</span>
+                      <span className="pm-tag highlight">用户量 100,000+</span>
+                    </div>
+                    <span className="pm-item-date">2024.10 - 2025.04</span>
                   </div>
-                  <span className="pm-item-date">2024.10 - 2025.04</span>
+                  <ul className="pm-item-desc">
+                    <li><strong>产品从 0 到 1：</strong>独立负责产品定位、核心功能规划、用户路径设计与上线验证，围绕年轻用户的情感表达、内容发布、互动反馈等场景设计社区产品闭环。</li>
+                    <li><strong>关键转化优化：</strong>针对账号绑定转化不足问题，从用户心理、入口位置、按钮文案、页面布局与交互反馈等维度重构转化链路，新版本上线后绑定人数提升 <strong>50%-70%</strong>。</li>
+                    <li><strong>数据驱动迭代：</strong>根据后台数据、用户反馈与<strong>近 7 万人</strong>自己运营的情感内容社群观察，关注页面访问、功能点击、内容发布、账号绑定等行为，用<strong>版本前后数据变化</strong>调整功能优先级和内容冷启动策略，积累了大量 UGC 内容互动经验。</li>
+                  </ul>
                 </div>
-                <ul className="pm-item-desc">
-                  <li><strong>产品从 0 到 1：</strong>独立负责产品定位、核心功能规划、用户路径设计与上线验证，围绕年轻用户的情感表达、内容发布、互动反馈等场景设计社区产品闭环。</li>
-                  <li><strong>关键转化优化：</strong>针对账号绑定转化不足问题，从用户心理、入口位置、按钮文案、页面布局与交互反馈等维度重构转化链路，新版本上线后绑定人数提升 <strong>50%-70%</strong>。</li>
-                  <li><strong>数据驱动迭代：</strong>根据后台数据、用户反馈与<strong>近 7 万人</strong>自己运营的情感内容社群观察，关注页面访问、功能点击、内容发布、账号绑定等行为，用<strong>版本前后数据变化</strong>调整功能优先级和内容冷启动策略，积累了大量 UGC 内容互动经验。</li>
-                </ul>
-              </div>
 
-              {/* 项目 2 */}
-              <div className="pm-project-item" style={{ marginBottom: 0 }}>
-                <div className="pm-timeline-dot"></div>
-                <div className="pm-item-header">
-                  <div className="pm-item-title-wrapper">
-                    <span className="pm-item-title">AI Native 产品开发工作流</span>
-                    <span className="pm-tag code">Vibe Coding</span>
+                {/* 项目 2 */}
+                <div className="pm-project-item pm-timeline-item" style={{ marginBottom: 0 }}>
+                  <div className="pm-timeline-dot hollow"></div>
+                  <div className="pm-item-header">
+                    <div className="pm-item-title-wrapper">
+                      <span className="pm-item-title">AI Native 产品开发工作流</span>
+                      <span className="pm-tag code">Vibe Coding</span>
+                    </div>
+                    <span className="pm-item-date">长期实践</span>
                   </div>
-                  <span className="pm-item-date">长期实践</span>
+                  <p className="pm-project-desc-text">
+                    长期使用 <strong>Claude、ChatGPT、Gemini</strong> 梳理需求、页面逻辑、异常情况和功能规则，并用 <strong>v0、Lovable、Claude Design</strong> 快速生成原型；开发前整理好 <strong>PRD、功能说明、接口字段、数据表</strong> 等文档，让后续 AI 开发更加明确高效。
+                  </p>
                 </div>
-                <p className="pm-project-desc-text">
-                  长期使用 <strong>Claude、ChatGPT、Gemini</strong> 梳理需求、页面逻辑、异常情况和功能规则，并用 <strong>v0、Lovable、Claude Design</strong> 快速生成原型；开发前整理好 <strong>PRD、功能说明、接口字段、数据表</strong> 等文档，让后续 AI 开发更加明确高效。
-                </p>
               </div>
             </section>
           </div>
@@ -201,7 +207,8 @@ const PmResume = ({ isDarkMode, onToggleTheme }) => {
             <h3 className="pm-sidebar-title"><i className="fa-solid fa-trophy"></i>荣誉与活动</h3>
             <ul className="pm-honors-list">
               <li>2025 AWS 中国上海峰会 · 1000Aider 应用大赛 全国 30 强</li>
-              <li>受邀参与行业大会活动交流（如百度/AWS等），具备公开表达与方案阐述能力</li>
+              <li>受邀参与行业大会活动交流(如百度/AWS等)，具备公开表达与方案阐述能力</li>
+              <li>快手 KwaiK AT 开发挑战赛 · 最佳项目奖 & 二等奖</li>
             </ul>
           </section>
         </aside>
